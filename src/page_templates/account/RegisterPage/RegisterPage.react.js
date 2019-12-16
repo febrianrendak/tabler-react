@@ -38,6 +38,7 @@ type Props = {|
   +values?: fieldTypes,
   +errors?: fieldTypes,
   +touched?: touchedTypes,
+  +imageURL?: string,
 |};
 
 /**
@@ -54,10 +55,11 @@ function RegisterPage(props: Props): React.Node {
     values,
     strings = {},
     errors,
+    imageURL,
   } = props;
 
   return (
-    <StandaloneFormPage imageURL={"./demo/logo.svg"}>
+    <StandaloneFormPage imageURL={imageURL || "./demo/logo.svg"}>
       <FormCard
         buttonText={strings.buttonText || defaultStrings.buttonText}
         title={strings.title || defaultStrings.title}
